@@ -13,7 +13,7 @@ certManager:
   serviceAccountName: cert-manager
 
 image:
-  repository: penguinade/cert-manager-webhook-freedns
+  repository: ghcr.io/catstrike/cert-manager-webhook-freedns
   tag: 2022.03.15
   pullPolicy: IfNotPresent
 
