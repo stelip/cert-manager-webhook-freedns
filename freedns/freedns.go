@@ -9,7 +9,7 @@ import (
 	"strconv"
 	"strings"
 
-	logf "github.com/jetstack/cert-manager/pkg/logs"
+	logf "github.com/cert-manager/cert-manager/pkg/logs"
 	"golang.org/x/net/html"
 )
 
