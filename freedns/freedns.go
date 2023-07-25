@@ -36,12 +36,12 @@ const URI_LOGOUT = "https://freedns.afraid.org/logout/"
 const URI_DELETE_RECORD = "https://freedns.afraid.org/subdomain/delete2.php?data_id[]=%s&submit=delete%%20selected"
 
 func LogInfo(Mesg string) {
-	// fmt.Println(Mesg)
+	fmt.Println(Mesg)
 	logf.V(logf.InfoLevel).Info(Mesg)
 }
 
 func LogDebug(Mesg string) {
-	// fmt.Println(Mesg)
+	fmt.Println(Mesg)
 	logf.V(logf.DebugLevel).Info(Mesg)
 }
 
@@ -111,11 +111,11 @@ func (dnsObj *FreeDNS) Login(Username string, Password string) error {
 	}
 
 	if strings.Contains(respString, "Invalid UserID/Pass") {
-		LogInfo("Login Failed");
+		LogInfo("Login Failed")
 		return errors.New("Invalid UserID/Pass")
 	}
 
-	LogInfo("Login Success");
+	LogInfo("Login Success")
 
 	for _, cookie := range resp.Cookies() {
 		if cookie.Name == "dns_cookie" {
