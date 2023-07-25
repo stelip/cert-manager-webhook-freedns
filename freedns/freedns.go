@@ -103,14 +103,19 @@ func (dnsObj *FreeDNS) Login(Username string, Password string) error {
 	authData.Set("submit", "Login")
 	authData.Set("action", "auth")
 
+	LogInfo("Login " + URI_LOGIN)
+
 	resp, respString, err := _HttpRequest("POST", URI_LOGIN, authData, nil)
 	if err != nil {
 		return err
 	}
 
 	if strings.Contains(respString, "Invalid UserID/Pass") {
+		LogInfo("Login Failed");
 		return errors.New("Invalid UserID/Pass")
 	}
+
+	LogInfo("Login Success");
 
 	for _, cookie := range resp.Cookies() {
 		if cookie.Name == "dns_cookie" {
