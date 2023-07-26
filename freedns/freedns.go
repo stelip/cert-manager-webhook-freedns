@@ -112,6 +112,7 @@ func (dnsObj *FreeDNS) Login(Username string, Password string) error {
 
 	if strings.Contains(respString, "Invalid UserID/Pass") {
 		LogInfo("Login Failed")
+		LogInfo(respString)
 		return errors.New("Invalid UserID/Pass")
 	}
 
