@@ -105,7 +105,7 @@ func (c *customDNSProviderSolver) Present(ch *v1alpha1.ChallengeRequest) error {
 	password := string(secretObj.Data["password"])
 
 	dnsObj := freedns.FreeDNS{}
-	freedns.LogInfo("Starting....")
+	freedns.LogInfo("Starting..2A..")
 
 	freedns.LogInfo(fmt.Sprintf("Secret Name %s", secretName))
 	freedns.LogInfo(fmt.Sprintf("username %s", username))
